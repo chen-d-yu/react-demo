@@ -1,0 +1,31 @@
+$breakpoints: (
+  "l": (
+    0px,
+    640px,
+  ),
+  "xl": (
+    641px,
+    768px,
+  ),
+  "2xl": (
+    769px,
+    960px,
+  ),
+  "3xl": 961px,
+);
+@mixin respondTo($breakname) {
+  $bp: map-get($breakpoints, $breakname);
+  @if type-of($bp) == "list" {
+    // 数组的情况
+    $min: nth($bp, 1);
+    $max: nth($bp, 2);
+
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import url(./styles/mixin.scss);
+
+.app {
+  width: 400px;
+  height: 400px;
+  background-color: red;
+
+  @include respondTo("xl") {
+    display: none;
+  }
+}
