@@ -1,0 +1,15 @@
+.svgIcon {
+  fill: currentColor;
+  overflow: hidden;
+  .svgIcon {
+  }
+
+  .hoverSvgIcon {
+  }
+}
+
+.svgExternalIcon {
+  background-color: currentColor;
+  mask-size: cover !important;
+  display: inline-block;
+}

@@ -1,22 +1,18 @@
 $breakpoints: (
-  "l": (
+  "s": (
     0px,
-    640px,
+    767px,
   ),
-  "xl": (
-    641px,
+  "m": (
     768px,
+    1023px,
   ),
-  "2xl": (
-    769px,
-    960px,
-  ),
-  "3xl": 961px,
+  "l": 1024px
 );
 @mixin respondTo($breakname) {
   $bp: map-get($breakpoints, $breakname);
   @if type-of($bp) == "list" {
-    // 数组的情况
+    // 数组的情况，说明当前尺寸在s、m之间
     $min: nth($bp, 1);
     $max: nth($bp, 2);
 

@@ -1,0 +1,13 @@
+.header{
+  position: relative;
+  z-index: 1000;
+
+  .inner{
+    padding:28px 0;
+    background-color: #fff;
+  }
+
+  .headerContainer{
+    padding: 0 16px;
+  }
+}
