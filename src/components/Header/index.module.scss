@@ -1,13 +1,94 @@
-.header{
+@use "../../styles/index.scss" as *;
+
+.header {
   position: relative;
   z-index: 1000;
 
-  .inner{
-    padding:28px 0;
+  .inner {
+    padding: 28px 0;
     background-color: #fff;
   }
 
-  .headerContainer{
+  .headerContainer {
     padding: 0 16px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 16px;
+
+    .left {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      .logo {
+        display: flex;
+        align-items: center;
+        height: 22px;
+      }
+    }
+    .right {
+      flex-grow: 1;
+      height: 100%;
+
+      .content,
+      .section {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+
+      .section > * {
+        margin-left: 16px;
+
+        @include respondTo("m") {
+          margin-left: 24px;
+        }
+
+        @include respondTo("l") {
+          margin-left: 32px;
+        }
+      }
+
+      .sectionLeft {
+        flex-grow: 1;
+      }
+
+      .header-link {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        color: #03314b;
+        text-decoration: none;
+      }
+
+      .header-link-first {
+        display: none;
+
+        @include respondTo("m") {
+          display: block;
+        }
+
+        @include respondTo("l") {
+          display: block;
+        }
+      }
+
+      .header-link:hover {
+        color: #0365f2;
+      }
+
+      .header-link--main {
+        position: relative;
+        height: 24px;
+      }
+    }
   }
 }
